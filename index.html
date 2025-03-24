@@ -1,12 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=close" />
+    <title>To do List</title>
 </head>
 <body>
+    <!-- body do to do list -->
+     <main class="container-principal">
+        <!-- Área de input do todo -->
+        <section class="container-seccao">
+            <h3 class="titulo">Formulário</h3>
+            <form action="">
+                <fieldset>
+                    <legend>Escreva abaixo a tarefa</legend>
+                    <input type="text" name="texto" id="input-text">
+                </fieldset>
+                <button type="submit" class="btn">Enviar</button>
+            </form>
+        </section>
+
+        <!-- Área da Lista de To do -->
+         <section class="container-seccao">
+            <!-- Altera o nome se preferir, não sabia qual nome escrever no titulo -->
+            <h3 class="titulo">Lista To do</h3>
+            <!-- Container da lista -->
+             <div class="lista-todo" id="lista">
+                <!-- Card da lista -->
+                 <div class="card-todo">
+                    <p class="texto-tarefa">Tarefa: lembrar de fazer uma To Do List</p>
+                    <button class="btn-del" id="deletar">
+                        <span class="material-symbols-outlined">close</span>
+                    </button>
+                 </div>
+             </div>
+         </section>
+     </main>
+
     <script src="script.js" defer></script>
 </body>
-</html>
