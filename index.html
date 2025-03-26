@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=close" />
-    <title>To do List</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 </head>
 <body>
-    <!-- body do to do list -->
-     <main class="container-principal">
-        <!-- Área de input do todo -->
+    <button id="toggle-theme">Alternar Tema</button>
+    <main class="container-principal">
         <section class="container-seccao">
             <h3 class="titulo">Formulário</h3>
             <form id="todo-form">
@@ -23,52 +22,11 @@
                 <button type="submit" class="btn">Adicionar Tarefa</button>
             </form>
         </section>
-
-        <!-- Área da Lista de To do -->
-         <section class="container-seccao">
+        <section class="container-seccao">
             <h3 class="titulo">Lista To do</h3>
-            <!-- Container da lista -->
-             <div class="lista-todo" id="lista">
-                <!-- Card da lista -->
-             </div>
-         </section>
-     </main>
-
-    <script>
-        document.getElementById("todo-form").addEventListener("submit", function(event) {
-            event.preventDefault();
-            let tituloInput = document.getElementById("input-titulo");
-            let descricaoInput = document.getElementById("input-descricao");
-            let titulo = tituloInput.value.trim();
-            let descricao = descricaoInput.value.trim();
-            let lista = document.getElementById("lista");
-
-            if (titulo === "" || descricao === "") {
-                alert("Por favor, preencha todos os campos.");
-                return;
-            }
-
-            let existingTasks = document.querySelectorAll(".texto-tarefa");
-            for (let task of existingTasks) {
-                if (task.innerText === `Tarefa: ${titulo} - ${descricao}`) {
-                    alert("Esta tarefa já foi adicionada com o mesmo título e descrição.");
-                    return;
-                }
-            }
-
-            let card = document.createElement("div");
-            card.className = "card-todo";
-            card.innerHTML = `
-                <p class="texto-tarefa">Tarefa: ${titulo} - ${descricao}</p>
-                <button class="btn-del" onclick="this.parentElement.remove()">
-                    <span class="material-symbols-outlined">close</span>
-                </button>
-            `;
-            lista.appendChild(card);
-
-            tituloInput.value = "";
-            descricaoInput.value = "";
-        });
-    </script>
+            <div class="lista-todo" id="lista"></div>
+        </section>
+    </main>
+    <script src="script.js" defer></script>
 </body>
 </html>
