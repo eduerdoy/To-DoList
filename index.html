@@ -13,7 +13,7 @@
         <!-- Área de input do todo -->
         <section class="container-seccao">
             <h3 class="titulo">Formulário</h3>
-            <form action="">
+            <form id="todo-form">
                 <fieldset>
                     <legend>Escreva abaixo o título da tarefa</legend>
                     <input type="text" name="titulo" id="input-titulo">
@@ -26,20 +26,49 @@
 
         <!-- Área da Lista de To do -->
          <section class="container-seccao">
-            <!-- Altera o nome se preferir, não sabia qual nome escrever no titulo -->
             <h3 class="titulo">Lista To do</h3>
             <!-- Container da lista -->
              <div class="lista-todo" id="lista">
                 <!-- Card da lista -->
-                 <div class="card-todo">
-                    <p class="texto-tarefa">Tarefa: lembrar de fazer uma To Do List</p>
-                    <button class="btn-del" id="deletar">
-                        <span class="material-symbols-outlined">close</span>
-                    </button>
-                 </div>
              </div>
          </section>
      </main>
 
-    <script src="script.js" defer></script>
+    <script>
+        document.getElementById("todo-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            let tituloInput = document.getElementById("input-titulo");
+            let descricaoInput = document.getElementById("input-descricao");
+            let titulo = tituloInput.value.trim();
+            let descricao = descricaoInput.value.trim();
+            let lista = document.getElementById("lista");
+
+            if (titulo === "" || descricao === "") {
+                alert("Por favor, preencha todos os campos.");
+                return;
+            }
+
+            let existingTasks = document.querySelectorAll(".texto-tarefa");
+            for (let task of existingTasks) {
+                if (task.innerText === `Tarefa: ${titulo} - ${descricao}`) {
+                    alert("Esta tarefa já foi adicionada com o mesmo título e descrição.");
+                    return;
+                }
+            }
+
+            let card = document.createElement("div");
+            card.className = "card-todo";
+            card.innerHTML = `
+                <p class="texto-tarefa">Tarefa: ${titulo} - ${descricao}</p>
+                <button class="btn-del" onclick="this.parentElement.remove()">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            `;
+            lista.appendChild(card);
+
+            tituloInput.value = "";
+            descricaoInput.value = "";
+        });
+    </script>
 </body>
+</html>
