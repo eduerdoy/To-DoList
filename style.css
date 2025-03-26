@@ -110,6 +110,42 @@ input {
     background-color: #666;
 }
 
+/* Estilos do tema Diversidade (Bandeira LGBT) */
+.diversity-mode {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.diversity-mode .container-principal {
+    background-color: #f0f0f0;
+}
+
+.diversity-mode .container-seccao {
+    background-color: white;
+    color: black;
+}
+
+.diversity-mode .card-todo {
+    background-color: #ff9999; /* Cor para o card */
+    color: black;
+}
+
+.diversity-mode .btn {
+    background-color: #ffcc00; /* Cor amarela para o botão */
+}
+
+.diversity-mode .btn:hover {
+    background-color: #ff9900;
+}
+
+/* Cores do arco-íris para o tema Diversidade */
+.diversity-mode .titulo {
+    color: #e60000; /* Vermelho */
+    background: linear-gradient(90deg, #e60000, #ff6600, #ffff00, #33cc33, #0066ff, #9900cc, #e600e6); 
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
 /* Botão de alternância de tema no canto superior esquerdo */
 #toggle-theme {
     position: absolute;
