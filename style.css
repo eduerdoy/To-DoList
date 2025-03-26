@@ -3,25 +3,31 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     min-height: 100vh;
     background-color: #f4f4f4;
     transition: background 0.3s, color 0.3s;
+    position: relative; /* Necessário para posicionamento do botão */
 }
 
 .container-principal {
-    width: 90%;
-    max-width: 600px;
-    background: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .container-seccao {
-    margin-bottom: 20px;
+    width: 48%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .titulo {
@@ -60,11 +66,12 @@ input {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #fff;
+    background: #f0f8ff;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     margin-top: 10px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .btn-del {
@@ -85,6 +92,16 @@ input {
     background-color: #333;
 }
 
+.dark-mode .container-seccao {
+    background-color: #444;
+    color: white;
+}
+
+.dark-mode .card-todo {
+    background: #555;
+    color: white;
+}
+
 .dark-mode .btn {
     background-color: #444;
 }
@@ -93,12 +110,16 @@ input {
     background-color: #666;
 }
 
+/* Botão de alternância de tema no canto superior esquerdo */
 #toggle-theme {
-    margin: 20px;
-    padding: 10px 15px;
-    border: none;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 5px 10px;
+    font-size: 14px;
     background-color: #000;
     color: white;
+    border: none;
     cursor: pointer;
     border-radius: 5px;
     transition: background 0.3s;
