@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Links para os estilos -->
+     <script src="script.js" defer></script>
+    <link rel="stylesheet" href="buttonstyle.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=close" />
+    
     <title>To do List</title>
 </head>
 <body>
@@ -63,7 +68,7 @@
             card.className = "card-todo";
             card.innerHTML = `
                 <p class="texto-tarefa">Tarefa: ${titulo} - ${descricao}</p>
-                <button class="btn-del" onclick="this.parentElement.remove()">
+                <button class="btn-del" onclick="removerCard(this)">
                     <span class="material-symbols-outlined">close</span>
                 </button>
             `;

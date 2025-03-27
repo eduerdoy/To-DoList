@@ -1,3 +1,4 @@
+
 document.getElementById("todo-form").addEventListener("submit", function(event) {
     event.preventDefault();
     let tituloInput = document.getElementById("input-titulo");
@@ -26,7 +27,7 @@ document.getElementById("todo-form").addEventListener("submit", function(event) 
     card.className = "card-todo";
     card.innerHTML = `
         <p class="texto-tarefa">Tarefa: ${titulo} - ${descricao}</p>
-        <button class="btn-del" onclick="this.parentElement.remove()">
+        <button class="btn-del" onclick="removerCard(this)">
             <span class="material-symbols-outlined">close</span>
         </button>
     `;
@@ -35,6 +36,7 @@ document.getElementById("todo-form").addEventListener("submit", function(event) 
     // Limpa os campos de entrada
     tituloInput.value = "";
     descricaoInput.value = "";
+
 });
 
 // Alternar entre modo claro, escuro e diversidade
@@ -58,3 +60,10 @@ document.getElementById("toggle-theme").addEventListener("click", function() {
         currentTheme = 'light';
     }
 });
+
+// Função para remover card todo
+function removerCard(button){
+    const card = button.closest('.card-todo');
+    card.remove()  
+
+}
