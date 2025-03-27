@@ -1,0 +1,47 @@
+/* Estilo do container principal da mensagem */
+.container-message{
+    height: 25%;
+    width: 25%;
+    
+    position: fixed;
+    top: 25%;
+    left: 35%;
+
+    border: 1px solid gray;
+    z-index: 2;
+
+    display: grid;
+    grid-template-columns: 100%;
+    align-items: center;
+    text-align: center;
+
+    padding: 2rem;
+    border-radius: 0.25rem;
+
+    background-color: whitesmoke;
+
+}
+
+/* Estilo do texto */
+.titulo{
+
+}
+
+/* Estilo do botão */
+.btn{
+    width: 25%;
+    margin: 0 auto;
+    border: 1px solid red;
+    border-radius: 0.25rem;
+}
+
+/* Ao passar o mouse por cima do botão indicar que é clicavel. */
+.btn:hover{
+    cursor: pointer;
+    background-color: red;
+
+}
+
+.btn:hover > span{
+    color: white;
+}
