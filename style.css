@@ -82,6 +82,18 @@ input {
     color: red;
 }
 
+.btn-check {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: green;
+}
+
+.card-todo.completed {
+    opacity: 0.5;
+}
+
 /* Estilos do modo escuro */
 .dark-mode {
     background-color: #222;

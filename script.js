@@ -27,9 +27,15 @@ document.getElementById("todo-form").addEventListener("submit", function(event) 
     card.className = "card-todo";
     card.innerHTML = `
         <p class="texto-tarefa">Tarefa: ${titulo} - ${descricao}</p>
+
+        <button class="btn-check" onclick="checkCard(this)">
+            <span class="material-symbols-outlined">radio_button_unchecked</span>
+        </button>
+
         <button class="btn-del" onclick="removerCard(this)">
             <span class="material-symbols-outlined">close</span>
         </button>
+        
     `;
     lista.appendChild(card);
 
@@ -96,4 +102,19 @@ function removerCard(button){
     const card = button.closest('.card-todo');
     card.remove(); 
 
+}
+
+function checkCard(button) {
+    const card = button.closest('.card-todo');
+    const icon = button.querySelector('.material-symbols-outlined');
+
+    if (card.classList.contains('completed')) {
+        // Desmarcar a tarefa
+        card.classList.remove('completed');
+        icon.textContent = 'radio_button_unchecked';
+    } else {
+        // Marcar a tarefa como concluída
+        card.classList.add('completed');
+        icon.textContent = 'check_circle';
+    }
 }
