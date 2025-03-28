@@ -8,7 +8,7 @@ Um projeto de lista de tarefas que lhe permite organizar seu afazeres rotineiros
 * Clique em "Adicionar tarefa";
 * Perceba que a tarefa foi documentada no outro box. 
 
-## Funcionlidades
+## Funcionalidades
 
 * Ao ter uma tarefa criada, você poderá marca-la como concluída ou excluir clicando no botão correspondente;
 * Ao marcar uma tarefa como concluída ela sumirá ao atualizar a página ;
