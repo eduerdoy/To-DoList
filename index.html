@@ -11,7 +11,11 @@
     <title>To Do List</title>
 </head>
 <body id="corpo-principal">
-    <button id="toggle-theme">Alternar Tema</button>
+    <button id="toggle-theme">
+        <span class="material-symbols-outlined">
+            light_mode
+        </span>
+    </button>
     <main class="container-principal">
         <section class="container-seccao">
             <h3 class="titulo">Formulário</h3>
@@ -28,7 +32,10 @@
         <section class="container-seccao">
             <h3 class="titulo">Lista To do</h3>
             <div class="lista-todo" id="lista"></div>
+            <button id="clear-tasks" class="btn" onclick="limparTarefas()">Limpar Todas as Tarefas</button>
         </section>
+
+       
     </main>
     <script src="script.js" defer></script>
     <script src="popup.js" defer></script>

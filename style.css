@@ -11,6 +11,10 @@ body {
     position: relative; /* Necessário para posicionamento do botão */
 }
 
+fieldset{
+    border:none;
+}
+
 .container-principal {
     display: flex;
     flex-direction: row;
@@ -41,6 +45,7 @@ input {
     margin: 5px 0;
     border: 1px solid #ccc;
     border-radius: 5px;
+    margin-left: -10px;
 }
 
 .btn {
@@ -52,11 +57,14 @@ input {
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s;
+    margin-top: 5px;
+    margin: 10px 10px 0px 0px;
 }
 
 .btn:hover {
     background-color: #0056b3;
 }
+
 
 .lista-todo {
     margin-top: 20px;
@@ -169,7 +177,7 @@ input {
     left: 20px;
     padding: 5px 10px;
     font-size: 14px;
-    background-color: #000;
+    background-color: #757575;
     color: white;
     border: none;
     cursor: pointer;
@@ -180,3 +188,5 @@ input {
 #toggle-theme:hover {
     background-color: #444;
 }
+
+
