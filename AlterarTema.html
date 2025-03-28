@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Links para os estilos -->
-     <script src="script.js" defer></script>
+    <script src="script.js" defer></script>
+    <script src="popup.js" defer></script>
     <link rel="stylesheet" href="buttonstyle.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=close" />
     
     <title>To do List</title>
 </head>
-<body>
+<body id="corpo-principal">
     <!-- Botão de alternância de tema -->
     <button id="toggle-theme" class="btn">Alternar Tema</button>
     
@@ -81,6 +82,8 @@
         // Alternar tema claro/escuro
         document.getElementById("toggle-theme").addEventListener("click", function() {
             document.body.classList.toggle("dark-mode");
+            let card = document.getElementById('.card-message');
+            
         });
     </script>
 
@@ -92,6 +95,7 @@
             background-color: #121212;
             color: #ffffff;
         }
+
         .dark-mode .container-seccao {
             background-color: #1e1e1e;
         }

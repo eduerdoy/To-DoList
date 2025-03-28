@@ -92,6 +92,10 @@ input {
     background-color: #333;
 }
 
+.dark-mode .container-message{
+    background-color: #222;
+}
+
 .dark-mode .container-seccao {
     background-color: #444;
     color: white;

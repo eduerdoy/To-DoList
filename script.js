@@ -61,9 +61,39 @@ document.getElementById("toggle-theme").addEventListener("click", function() {
     }
 });
 
+// Gerar popup
+function popUP(){
+    const corpo = document.body;
+    
+    let card = document.createElement("div");
+
+    card.innerHTML = 
+        `<div class="container-message" id="card-message">
+            <h3 class="titulo">Tarefa excluída com sucesso!</h3>
+            <button class="btn" onclick="this.parentElement.remove()">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>`;
+
+
+
+    corpo.appendChild(card);
+}
+
+// Remover pop-up
+function removerPopUP(button){
+
+    const element = button.closest('.card-message');
+    element.remove()
+}
+
 // Função para remover card todo
 function removerCard(button){
+
+    popUP();
+
+    
     const card = button.closest('.card-todo');
-    card.remove()  
+    card.remove(); 
 
 }
