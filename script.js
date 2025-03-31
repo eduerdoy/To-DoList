@@ -182,3 +182,5 @@ function limparTarefas() {
     document.getElementById('lista').innerHTML = ''; // Limpa a lista de tarefas
     localStorage.removeItem('tarefas'); // Limpa o localStorage
 }
+
+

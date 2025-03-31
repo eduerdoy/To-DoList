@@ -128,6 +128,7 @@ input {
 
 .dark-mode .btn {
     background-color: #444;
+    border: 1px solid #666;
 }
 
 .dark-mode .btn:hover {
